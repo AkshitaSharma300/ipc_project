@@ -4,11 +4,12 @@ using namespace std;
 void simulatePipe() {
     int pipefd[2];
     char buffer[50];
-    // Creating a pipe for communication between parent and child   ← REVISION 1
+    // Creating a pipe for communication between parent and child   ← REVISION 2
     if (pipe(pipefd) == -1) {
         cout << "Pipe creation failed!" << endl;
         return;
     }
+    cout << "Pipe created successfully. Preparing to fork..." << endl;   // ← REVISION 3
     int pid = fork();
     if (pid < 0) {
         cout << "Fork failed!" << endl;
