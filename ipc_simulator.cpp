@@ -19,6 +19,7 @@ void simulatePipe() {
         string message = "Hello from Child Process (PIPE)";
         write(pipefd[1], message.c_str(), message.size() + 1);
         close(pipefd[1]);
+        cout << "Child Process: Writing to pipe..." << endl;
     } 
     // Parent Process
     else {
