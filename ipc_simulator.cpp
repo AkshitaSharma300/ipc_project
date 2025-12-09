@@ -4,6 +4,7 @@ using namespace std;
 void simulatePipe() {
     int pipefd[2];
     char buffer[50];
+    // Creating a pipe for communication between parent and child   ← REVISION 1
     if (pipe(pipefd) == -1) {
         cout << "Pipe creation failed!" << endl;
         return;
